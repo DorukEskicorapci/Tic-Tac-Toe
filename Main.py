@@ -1,8 +1,17 @@
-from game import tablefunctions 
+from game import tablefunctions, Coordinates
 
-xs, ys = 3, 3
+x, y = 3, 3
 
-tablefunctions.callboard(xs, ys)
+gameboard = tablefunctions.createboard(x, y)
+
+tablefunctions.updateboard(gameboard, 1, 2, "O")
+
+
+tablefunctions.displayboard(gameboard)
+
+tablefunctions.updateboard(gameboard, 2, 1, "X")
+
+tablefunctions.displayboard(gameboard)
 
 
 

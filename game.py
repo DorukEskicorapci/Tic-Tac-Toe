@@ -1,20 +1,44 @@
 class Coordinates:
-    def __init__(self, value):
-        self.value = value
-
-    def print_value(self):
-        print(self.value)
-
-obj = Coordinates("a")
+    def __init__():
+        
+        
+        print("obj")
 
 
 class tablefunctions:
-    def callboard(xs, ys):
+
+    def createboard(x, y):
         
-        #xs, ys = 3, 3
-        gameboard = [['▢']*xs]*ys
+        #x, y = 3, 3
         
-        print("Board:" + "\n")
-        for xs in gameboard:
-            print(*xs, sep="  ")
+        gameboard = [['▢' for _ in range(x)] for _ in range(y)]
+        
+        return gameboard
+
+    
+    
+    def displayboard(gameboard):
+        
+        print("\n" + "Current Board:" + "\n")
+        for x in gameboard:
+            print(*x, sep="  ")
         print()
+    
+    def updateboard(gameboard, x, y, player):
+        
+        if player == "X":
+            gameboard[x][y] = "X"
+        elif player == "O":
+            gameboard[x][y] = "O"
+        
+        return gameboard
+
+
+    """
+    def autodisplayboard(gameboard):
+        
+        print("\n" + "New Board:" + "\n")
+        for x in gameboard:
+            print(*x, sep="  ")
+        print()
+    """
