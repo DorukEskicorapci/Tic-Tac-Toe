@@ -9,14 +9,12 @@ obj = Coordinates("a")
 
 
 class tablefunctions:
-    def calltable(xs, ys):
+    def callboard(xs, ys):
         
         #xs, ys = 3, 3
-        gametable = [['[]']*xs]*ys
+        gameboard = [['▢']*xs]*ys
         
-        for xs in gametable:
-            print(*xs, sep="\t")
-        
-
-
-
+        print("Board:" + "\n")
+        for xs in gameboard:
+            print(*xs, sep="  ")
+        print()

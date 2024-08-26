@@ -2,16 +2,16 @@ from game import tablefunctions
 
 xs, ys = 3, 3
 
-tablefunctions.calltable(xs, ys)
+tablefunctions.callboard(xs, ys)
 
 
 
 
 
-'''"
-#command for printing the whole table 
+'''
+#command for printing the whole board 
 
-for xs in gametable:
+for xs in gameboard:
     print(*xs, sep="\t")
             
 '''
