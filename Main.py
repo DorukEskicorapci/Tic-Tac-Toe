@@ -2,9 +2,16 @@ from game import tablefunctions, Coordinates
 
 x, y = 3, 3
 
-gameboard = tablefunctions.createboard(x, y)
+if x > 9 or y > 9:
+    print("Board size too large")
+    exit()
 
-tablefunctions.updateboard(gameboard, 1, 2, "O")
+gameboard = tablefunctions.createboard(x + 1, y + 1)
+
+
+
+
+tablefunctions.updateboard(gameboard, 1, 1, "O")
 
 
 tablefunctions.displayboard(gameboard)
@@ -13,7 +20,9 @@ tablefunctions.updateboard(gameboard, 2, 1, "X")
 
 tablefunctions.displayboard(gameboard)
 
+tablefunctions.updateboard(gameboard, 3, 3, "X")
 
+tablefunctions.displayboard(gameboard)
 
 
 
@@ -34,5 +43,10 @@ for xs in gameboard:
    x1 -  -  -
    x2 -  -  -
    x3 -  -  -
+
+     a  b  c       
+   1 -  -  -
+   2 -  -  -
+   3 -  -  -
 
 '''
