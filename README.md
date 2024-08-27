@@ -6,6 +6,6 @@ The game features a Tic Tac Toe board with up to nine blocks. It was built utili
 The major purpose of this project was to learn and practice Python syntax using my Java skills and experience.
 
 
-Project start date: 7/27/2024
+Project start date: 7/26/2024
 
 Project end date: 7/**/2024
