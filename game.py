@@ -2,11 +2,12 @@ class Coordinates:
     def translate_x(usermove_x):
         
         move_x = usermove_x[0]
-        lowercase = move_x.lower()
+        #lowercase = move_x.lower()
+        casefold = move_x.casefold()
         i = 0
         letters = "abcdefghijklmnopqrstuvwxyz"
         while i < len(letters):
-            if lowercase == letters[i]:
+            if casefold == letters[i]:
                 return i +1
                 break
             i += 1
