@@ -86,37 +86,7 @@ while continuegame == True:
    """
         
 
-
-
-
-
-    
-
-
-""" update and display the board
-tablefunctions.updateboard(gameboard, 1, 1, "x")
-
-
-tablefunctions.displayboard(gameboard)
-
-
-tablefunctions.updateboard(gameboard, 2, 1, "X")
-
-tablefunctions.displayboard(gameboard)
-
-tablefunctions.updateboard(gameboard, 3, 3, "X")
-
-tablefunctions.displayboard(gameboard)
-
-
-#command for printing the whole board 
-
-for xs in gameboard:
-    print(*xs, sep="\t")
-            
-"""
-
-""" scenarios  
+"""  win scenarios  
       y1 y2 y3         
    x1 x  x  x
    x2 -  -  -
