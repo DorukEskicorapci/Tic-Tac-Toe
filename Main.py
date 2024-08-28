@@ -72,7 +72,6 @@ while continuegame == True:
       print("New game started!" + "\n")
    
 
-
 """ Code for manuel game end
 
    gameboard[0][i] = letters[i]
@@ -83,8 +82,6 @@ while continuegame == True:
         check = True
    """
   
-
-
 """  win scenarios  
       y1 y2 y3         
    x1 x  x  x
