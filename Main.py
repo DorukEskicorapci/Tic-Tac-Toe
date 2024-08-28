@@ -73,7 +73,6 @@ while continuegame == True:
    
 
 
-
 """ Code for manuel game end
 
    gameboard[0][i] = letters[i]
@@ -83,7 +82,7 @@ while continuegame == True:
    if usermove == "yes":
         check = True
    """
-        
+  
 
 
 """  win scenarios  
@@ -103,7 +102,6 @@ while continuegame == True:
    x3 x  -  -
 
 """
-
 
 '''  coordinates for the board
       y1 y2 y3       
