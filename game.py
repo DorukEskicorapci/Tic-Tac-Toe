@@ -1,5 +1,5 @@
 class Coordinates:
-    def translate_x(usermove_x):
+    def translate_y(usermove_x):
         
         move_x = usermove_x[0]
         #lowercase = move_x.lower()
@@ -8,17 +8,159 @@ class Coordinates:
         letters = "abcdefghijklmnopqrstuvwxyz"
         while i < len(letters):
             if casefold == letters[i]:
-                return i +1
+                return i + 1
                 break
             i += 1
 
     
-    def translate_y(usermovey):
+    def translate_x(usermovey):
         
         return int(usermovey[1])
 
+class gameproperties:
+    def x_checkwin(gameboard, size):
+        
+
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[j][k] == "X":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[k][j] == "X":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[-j][j] == "X":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+        
 
 
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[j][j] == "X":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+
+
+        return False
+
+
+    def O_checkwin(gameboard, size):
+        
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[j][k] == "O":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[k][j] == "O":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[-j][j] == "O":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+        
+
+
+        repcheck = 0
+        k = -1
+        while k <= size:
+            j = 1 
+            while j <= size:
+                if repcheck == size :
+                    
+                    return True
+                else:
+                    if gameboard[j][j] == "O":
+                        repcheck += 1
+                    else:
+                        repcheck = 0
+                j += 1
+            k += 1
+
+
+        return False
 
 class tablefunctions:
 
@@ -68,12 +210,3 @@ class tablefunctions:
         
         return gameboard
 
-
-    """
-    def autodisplayboard(gameboard):
-        
-        print("\n" + "New Board:" + "\n")
-        for x in gameboard:
-            print(*x, sep="  ")
-        print()
-    """

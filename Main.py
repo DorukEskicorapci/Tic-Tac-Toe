@@ -1,9 +1,42 @@
-from game import tablefunctions, Coordinates
+from game import tablefunctions, Coordinates, gameproperties
 
-#x, y = 3, 3
+
+def userinput(gameboard): #starts taking user input for game moves
+   check = False
+   i = 1
+   while check == False:
+      usermove = input("Enter the coordinates for player " + str(i) + ": ")
+
+      move_x = Coordinates.translate_x(usermove)
+      move_y = Coordinates.translate_y(usermove)
+
+      if gameboard[move_x][move_y] == "X" or gameboard[move_x][move_y] == "O":
+         print("There is already a sign in the desired position. Please try again" + "\n")
+         continue
+
+      if i == 1:
+         i = 2
+         gameboard[move_x][move_y] = "X"
+         
+      else:
+         i = 1
+         gameboard[move_x][move_y] = "O"
+
+      
+      tablefunctions.displayboard(gameboard)
+
+      if gameproperties.x_checkwin(gameboard, x):
+         print("Player 1 (X) wins!" + "\n")
+         check = True
+         break
+      elif gameproperties.O_checkwin(gameboard, y):
+         print("Player 2 (O) wins!" + "\n")
+         check = True
+         break
+
 
 #creates the board
-check = False
+
 
 size = input("Enter the board size: ")
 x, y = int(size),int(size)
@@ -16,41 +49,29 @@ gameboard = tablefunctions.createboard(x, y)
 
 tablefunctions.displayboard(gameboard)
 
+userinput(gameboard)
+      
 
 
-#starts taking user input for game moves
-i = 1
-while check == False:
-   usermove = input("Enter the coordinates for player " + str(i) + ": ")
+""" Code for manuel game end
 
-   move_x = Coordinates.translate_x(usermove)
-   move_y = Coordinates.translate_y(usermove)
-   if i == 1:
-      i = 2
-      gameboard[move_y][move_x] = "X"
-        
-   else:
-      i = 1
-      gameboard[move_y][move_x] = "O"
-
-   
-   tablefunctions.displayboard(gameboard)
+   gameboard[0][i] = letters[i]
+         i += 1
 
    usermove = input("Do you want to end the game. Enter 'yes' or 'no': ")
    if usermove == "yes":
         check = True
-      
+   """
         
 
 
 
 
 
-def checkwin(gameboard):
     
 
 
-  """ update and display the board
+""" update and display the board
 tablefunctions.updateboard(gameboard, 1, 1, "x")
 
 
@@ -91,7 +112,6 @@ for xs in gameboard:
 
 """
 
-#Coordinates.obj.print_value()
 
 '''  coordinates for the board
       y1 y2 y3       
