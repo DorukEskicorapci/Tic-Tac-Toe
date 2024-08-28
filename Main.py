@@ -14,7 +14,7 @@ def userinput(gameboard): #starts taking user input for game moves
          print("There is already a sign in the desired position. Please try again" + "\n")
          continue
 
-
+ 
       if i == 1:
          i = 2
          gameboard[move_x][move_y] = "X"
