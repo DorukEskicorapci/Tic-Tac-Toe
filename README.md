@@ -3,7 +3,7 @@
 This project is my first fully functional Python application.
 
 **Features**
-The game features a Tic Tac Toe board with up to nine blocks. It was built utilizing core Python concepts with the goal of creating a more complex project than the usual implementation. The major purpose of this project was to learn and practice Python using my Java skills and experience.
+The game features a Tic Tac Toe board with up to nine blocks. It was built utilizing core Python concepts including **classes, loops, functions, and arrays** to create a more complex project than the usual implementation. The major purpose of this project was to learn and practice Python using my Java skills and experience.
 
 **Key Functionalities:**
   - Win Check: Ensures the game correctly identifies a win condition when a player has filled a column, row, diagonal, or anti-diagonal with their symbol.
