@@ -10,6 +10,9 @@ The game features a Tic Tac Toe board with up to nine blocks. It was built utili
   - Draw Check: Determines if the game has ended in a draw when all cells are filled without any player winning.
   - User Input Translation: Converts user input into board coordinates for game moves.
 
+
 **Project Timeline:**
+
 Start Date: August 26, 2024
+
 End Date: August 28, 2024
