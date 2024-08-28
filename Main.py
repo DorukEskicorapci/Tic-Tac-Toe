@@ -1,14 +1,19 @@
 from game import tablefunctions, Coordinates, gameproperties
 
 
-def userinput(gameboard): #starts taking user input for game moves
+def userinput(gameboard, size): #starts taking user input for game moves
    check = False
    i = 1
+   x, y = int(size),int(size)
    while check == False:
       usermove = input("Enter the coordinates for player " + str(i) + ": ")
 
       move_x = Coordinates.translate_x(usermove)
       move_y = Coordinates.translate_y(usermove)
+
+      if move_x > x or move_y > y:
+         print("Invalid coordinates. Please try again" + "\n")
+         continue
 
       if gameboard[move_x][move_y] == "X" or gameboard[move_x][move_y] == "O":
          print("There is already a sign in the desired position. Please try again" + "\n")
@@ -34,24 +39,40 @@ def userinput(gameboard): #starts taking user input for game moves
          print("Player 2 (O) wins!" + "\n")
          check = True
          break
+      elif gameproperties.checkdraw(gameboard, x):
+          print("The game is a draw!" + "\n")
+          check = True
+          break
 
 
 #creates the board
+def startgame():
+  
+  size = input("Enter the board size: ")
+  x, y = int(size),int(size)
 
+  if x > 9 or y > 9:
+      print("Board size too large. Please enter a value less than 10." + "\n")
+      exit()
 
-size = input("Enter the board size: ")
-x, y = int(size),int(size)
+  gameboard = tablefunctions.createboard(x, y)
 
-if x > 9 or y > 9:
-    print("Board size too large. Please enter a value less than 10." + "\n")
-    exit()
+  tablefunctions.displayboard(gameboard)
 
-gameboard = tablefunctions.createboard(x, y)
+  userinput(gameboard, size)
 
-tablefunctions.displayboard(gameboard)
+continuegame = True
+while continuegame == True:
+    startgame()
+    usermove = input("Do you want to play again? Enter 'yes' or 'no': ")
+    lowercaseusermove = usermove.lower()
+    if usermove == "no":
+      continuegame = False
+    else:
+      continuegame = True
+      print("New game started!" + "\n")
+   
 
-userinput(gameboard)
-      
 
 
 """ Code for manuel game end

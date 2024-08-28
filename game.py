@@ -18,6 +18,21 @@ class Coordinates:
         return int(usermovey[1])
 
 class gameproperties:
+    def checkdraw(gameboard, size):
+        k = 1
+        repcheck = 0
+        while k < size +1:
+            j = 1 
+            while j < size +1:
+                if gameboard[k][j] != "▢":
+                    repcheck += 1
+                j += 1
+            k += 1
+        if repcheck == size * size:
+            return True
+        else:    
+            return False
+
     def x_checkwin(gameboard, size):
         
         #vertical check
@@ -93,38 +108,39 @@ class gameproperties:
 
     def O_checkwin(gameboard, size):
         
-        repcheck = 0
-        k = -1
-        while k <= size:
+        #vertical check
+        k = 1
+        while k < size +1:
+            repcheck = 0
             j = 1 
-            while j <= size:
-                if repcheck == size :
-                    
-                    return True
+            while j < size +1:
+                if gameboard[j][k] == "O":
+                    repcheck += 1
                 else:
-                    if gameboard[j][k] == "O":
-                        repcheck += 1
-                    else:
-                        repcheck = 0
+                    repcheck = 0
+                if repcheck == size :
+                    return True
+                
                 j += 1
             k += 1
 
-        repcheck = 0
-        k = -1
-        while k <= size:
+        #horizontal check
+        k = 1
+        while k < size +1:
+            repcheck = 0
             j = 1 
-            while j <= size:
-                if repcheck == size :
-                    
-                    return True
+            while j < size +1:
+                if gameboard[k][j] == "O":
+                    repcheck += 1
                 else:
-                    if gameboard[k][j] == "O":
-                        repcheck += 1
-                    else:
-                        repcheck = 0
+                    repcheck = 0
+                if repcheck == size :
+                    return True
+                
                 j += 1
             k += 1
 
+        #andiagonal check
         repcheck = 0
         k = -1
         while k <= size:
@@ -142,7 +158,7 @@ class gameproperties:
             k += 1
         
 
-
+        #diagonal check
         repcheck = 0
         k = -1
         while k <= size:
@@ -163,6 +179,7 @@ class gameproperties:
         return False
 
 class tablefunctions:
+    
 
     def createboard(x, y):
         
