@@ -44,7 +44,6 @@ def userinput(gameboard, size): #starts taking user input for game moves
           check = True
           break
 
-
 #creates the board
 def startgame():
   
